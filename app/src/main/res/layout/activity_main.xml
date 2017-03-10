@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_height = "match_parent"
+    android:layout_width = "match_parent"
+    tools:context = ".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding = "16dp"
+        tools:context="com.example.android.justjava.MainActivity">
+
+        <EditText
+            android:id = "@+id/editText"
+            android:hint = "Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType = "textCapWords"/>
+
+        <TextView
+            android:id = "@+id/toppingsHeading"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_below = "@id/editText"
+            android:text = "TOPPINGS" />
+
+        <RelativeLayout
+            android:id = "@+id/relLayout"
+            android:layout_below = "@id/toppingsHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id = "@+id/whippedCreamBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight = "24dp"/>
+
+            <TextView
+                android:id = "@+id/toppingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "Whipped Cream ($1)"
+                android:textSize = "16sp"
+                android:layout_alignBaseline="@+id/whippedCreamBox"
+                android:layout_toRightOf="@+id/whippedCreamBox"/>
+            <CheckBox
+                android:id = "@+id/chocolateBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below = "@id/whippedCreamBox"
+                android:paddingRight = "24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text = "Chocolate ($2)"
+                android:textSize = "16sp"
+                android:layout_alignBaseline = "@id/chocolateBox"
+                android:layout_toRightOf = "@id/chocolateBox"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id = "@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below = "@id/relLayout"
+            android:text="QUANTITY"
+            android:paddingBottom = "16dp"/>
+
+        <LinearLayout
+            android:id = "@+id/nestLay"
+            android:layout_below = "@id/quantity"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id = "@+id/decrement"
+                android:text = "-"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:onClick = "decrement"/>
+            <TextView
+                android:id = "@+id/quantity_text_view"
+                android:text = "0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#000000"
+                android:textSize = "16sp"
+                android:paddingLeft = "8dp"
+                android:paddingRight = "8dp" />
+
+            <Button
+                android:id = "@+id/increment"
+                android:text = "+"
+                android:layout_height = "48dp"
+                android:layout_width = "48dp"
+                android:onClick = "increment"/>
+        </LinearLayout>
+
+        <TextView
+            android:id = "@+id/orderSum_text_view"
+            android:text = "ORDER SUMMARY"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:paddingTop = "16dp"
+            android:paddingBottom = "16dp"
+            android:layout_below="@+id/nestLay"/>
+        <TextView
+            android:id = "@+id/order_summary_text_view"
+            android:text = "$0"
+            android:textColor = "#000000"
+            android:textSize = "16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below = "@id/orderSum_text_view"
+            android:paddingBottom = "16dp" />
+        <Button
+            android:id = "@+id/conOrderButton"
+            android:text = "@string/conOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below = "@id/order_summary_text_view"
+            android:onClick = "submitOrder"/>
+    </RelativeLayout>
+</ScrollView>
